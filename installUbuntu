@@ -1,0 +1,47 @@
+autoinstall:
+  version: 1
+  identity:
+    hostname: ubuntu-desktop
+    username: IXCSoft
+    password: "$6$9PzgH5sHmSbA$BgV10qDnskXejwZuaEP6ES09Jo9zKWkU6l3Mre5Bj5gzf4DLhGPYUptaz2hcG0/otZQppuXpXhQ2JvAc.PTHO1" # Hash para a senha "ixcsoft6001"
+  storage:
+    layout:
+      name: lvm
+  snaps:
+    - name: spotify
+      classic: false
+    - name: telegram-desktop
+      classic: false
+    - name: obsidian
+      classic: true
+    - name: code
+      classic: true
+    - name: anydesk
+      classic: false
+    - name: teamviewer
+      classic: true
+    - name: sublime-text
+      classic: false
+    - name: google-chrome
+      classic: false
+    - name: bitwarden
+      classic: false
+    - name: onlyoffice
+      classic: false
+    - name: skype
+      classic: false
+    - name: flameshot
+      classic: false
+    - name: kazam
+      classic: false
+    - name: vlc
+      classic: false
+    - name: slack
+      classic: false
+  packages:
+    - network-manager-l2tp-gnome
+    - network-manager-pptp
+    - glpi-agent
+  late-commands:
+    - curtin in-target -- wget https://github.com/glpi-project/glpi/releases/download/9.5.0/glpi-9.5.0.tgz
+    - curtin in-target -- tar -xvzf glpi-9.5.0.tgz -C /var/www/html/
