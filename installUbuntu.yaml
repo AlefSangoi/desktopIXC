@@ -12,8 +12,6 @@ autoinstall:
       classic: false
     - name: telegram-desktop
       classic: false
-    - name: obsidian
-      classic: true
     - name: code
       classic: true
     - name: anydesk
